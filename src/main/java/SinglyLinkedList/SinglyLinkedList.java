@@ -4,7 +4,7 @@ public class SinglyLinkedList<T> {
 
     SinglyNode head;
     SinglyNode last;
-    SinglyNode tail;
+    SinglyLinkedList tail;
     int size = 0;
 
     public void add(T data) {
