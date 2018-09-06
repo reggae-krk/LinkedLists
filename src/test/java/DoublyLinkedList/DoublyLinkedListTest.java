@@ -21,4 +21,12 @@ class DoublyLinkedListTest {
         assertEquals("test0", list.getData(0));
     }
 
+    @Test
+    void testRemoveFirstElement() {
+        DoublyLinkedList<String> list = init();
+
+        list.remove(0);
+
+        assertEquals("test1", list.getData(0));
+    }
 }
