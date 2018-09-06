@@ -2,6 +2,9 @@ package SinglyLinkedList;
 
 import org.junit.jupiter.api.Test;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class SinglyLinkedListTest {
@@ -94,5 +97,22 @@ class SinglyLinkedListTest {
         list.add("test2");
 
         assertEquals("test2", list.getLast());
+    }
+
+    @Test
+    void testIterate() {
+        SinglyLinkedList<String> list = new SinglyLinkedList<String>();
+        list.add("test0");
+        list.add("test1");
+        list.add("test2");
+
+        final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+
+        list.iterate();
+
+        assertEquals("test0\n" +
+                "test1\n" +
+                "test2\n", outContent.toString());
     }
 }
