@@ -79,4 +79,13 @@ public class SinglyLinkedList<T> {
         }
         return node.getData();
     }
+
+    public void iterate() {
+        SinglyNode<T> node = head;
+        while (node.getNext() != null) {
+            System.out.println(node.getData());
+            node = node.getNext();
+        }
+        System.out.println(node.getData());
+    }
 }
