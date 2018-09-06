@@ -21,4 +21,18 @@ public class SinglyLinkedList<T> {
             tempNode.setNext(node);
         }
     }
+
+    public void remove(int index) {
+        SinglyNode<T> tempNode = head;
+
+        if (index == 0) {
+            head = head.getNext();
+        }
+        else {
+            for (int i = 1; i < index; i++) {
+                tempNode = tempNode.getNext();
+            }
+            tempNode.setNext(tempNode.getNext().getNext());
+        }
+    }
 }
