@@ -59,4 +59,16 @@ public class SinglyLinkedList<T> {
     public int getSize() {
         return size;
     }
+
+    public SinglyLinkedList getTail() {
+        SinglyNode<T> node = head.getNext();
+        tail = new SinglyLinkedList<T>();
+        tail.add(node.getData());
+
+        while (node.getNext() != null) {
+            tail.add(node.getNext().getData());
+            node = node.getNext();
+        }
+        return tail;
+    }
 }
