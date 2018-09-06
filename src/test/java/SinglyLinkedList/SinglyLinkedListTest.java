@@ -84,6 +84,15 @@ class SinglyLinkedListTest {
 
         assertEquals(2, result.getSize());
         assertEquals("test1", result.get(0));
+    }
 
+    @Test
+    void testGetLast() {
+        SinglyLinkedList<String> list = new SinglyLinkedList<String>();
+        list.add("test0");
+        list.add("test1");
+        list.add("test2");
+
+        assertEquals("test2", list.getLast());
     }
 }
