@@ -24,4 +24,17 @@ class SinglyLinkedListTest {
 
         assertEquals("test1", list.get(0));
     }
+
+    @Test
+    void testRemoveMiddleElement() {
+        SinglyLinkedList<String> list = new SinglyLinkedList<String>();
+        list.add("test0");
+        list.add("test1");
+        list.add("test2");
+
+        list.remove(1);
+
+        assertEquals("test0", list.get(0));
+        assertEquals("test2", list.get(1));
+    }
 }
