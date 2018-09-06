@@ -5,7 +5,7 @@ public class SinglyLinkedList<T> {
     SinglyNode head;
     SinglyNode last;
     SinglyNode tail;
-    int length;
+    int size = 0;
 
     public void add(T data) {
         SinglyNode<T> node = new SinglyNode<T>(data);
@@ -20,6 +20,7 @@ public class SinglyLinkedList<T> {
             }
             tempNode.setNext(node);
         }
+        size++;
     }
 
     public void remove(int index) {
@@ -34,6 +35,7 @@ public class SinglyLinkedList<T> {
             }
             tempNode.setNext(tempNode.getNext().getNext());
         }
+        size--;
     }
 
     public void insert(int index, T data) {
@@ -51,5 +53,10 @@ public class SinglyLinkedList<T> {
             node.setNext(tempNode.getNext());
             tempNode.setNext(node);
         }
+        size++;
+    }
+
+    public int getSize() {
+        return size;
     }
 }
