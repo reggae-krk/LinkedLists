@@ -24,4 +24,21 @@ public class DoublyLinkedList<T> {
         }
         size++;
     }
+
+    public void remove(int index) {
+        DoublyNode<T> tempNode = head;
+
+        if (index == 0) {
+            head = head.getNext();
+        }
+        else {
+            for (int i = 1; i < index; i++) {
+                tempNode = tempNode.getNext();
+            }
+            DoublyNode<T> newNode = tempNode.getNext().getNext();
+            tempNode.setNext(newNode);
+            newNode.setPrevious(tempNode);
+        }
+        size--;
+    }
 }
