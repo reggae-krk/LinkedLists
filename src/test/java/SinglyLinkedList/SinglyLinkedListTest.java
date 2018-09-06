@@ -50,4 +50,15 @@ class SinglyLinkedListTest {
         assertEquals("test0", list.get(0));
         assertEquals("test1", list.get(1));
     }
+
+    @Test
+    void testInsert() {
+        SinglyLinkedList<String> list = new SinglyLinkedList<String>();
+        list.add("test0");
+        list.add("test1");
+
+        list.insert(1, "insert");
+
+        assertEquals("insert", list.get(1));
+    }
 }
