@@ -88,4 +88,16 @@ public class SinglyLinkedList<T> {
         }
         System.out.println(node.getData());
     }
+
+    public T get(int index) {
+        SinglyNode<T> node = head;
+
+        for (int i = 0; i < size; i++) {
+            if (i == index) {
+                return node.getData();
+            }
+            else node = node.getNext();
+        }
+        return null;
+    }
 }
