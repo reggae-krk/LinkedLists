@@ -63,4 +63,9 @@ public class DoublyLinkedList<T> {
         }
         size++;
     }
+
+    public int getSize() {
+        return size;
+    }
+
 }
