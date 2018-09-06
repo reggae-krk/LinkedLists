@@ -71,4 +71,12 @@ public class SinglyLinkedList<T> {
         }
         return tail;
     }
+
+    public T getLast() {
+        SinglyNode<T> node = head;
+        for (int i = 0; i < size - 1; i++) {
+            node = node.getNext();
+        }
+        return node.getData();
+    }
 }
