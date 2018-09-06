@@ -68,4 +68,16 @@ public class DoublyLinkedList<T> {
         return size;
     }
 
+    public DoublyLinkedList getTail() {
+        DoublyNode<T> node = head.getNext();
+        node.setPrevious(null);
+        tail = new DoublyLinkedList<T>();
+        tail.add(node.getData());
+
+        while (node.getNext() != null) {
+            tail.add(node.getNext().getData());
+            node = node.getNext();
+        }
+        return tail;
+    }
 }
