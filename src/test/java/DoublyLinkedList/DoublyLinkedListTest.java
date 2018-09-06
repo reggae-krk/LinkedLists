@@ -29,4 +29,14 @@ class DoublyLinkedListTest {
 
         assertEquals("test1", list.getData(0));
     }
+
+    @Test
+    void testRemoveMiddleElement() {
+        DoublyLinkedList<String> list = init();
+
+        list.remove(1);
+
+        assertEquals("test0", list.getData(0));
+        assertEquals("test2", list.getData(1));
+    }
 }
