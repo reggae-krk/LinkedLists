@@ -88,4 +88,13 @@ public class DoublyLinkedList<T> {
         }
         return node.getData();
     }
+
+    public void iterate() {
+        DoublyNode<T> node = head;
+        while (node.getNext() != null) {
+            System.out.println(node.getData());
+            node = node.getNext();
+        }
+        System.out.println(node.getData());
+    }
 }
