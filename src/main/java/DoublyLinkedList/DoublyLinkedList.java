@@ -7,6 +7,30 @@ public class DoublyLinkedList<T> {
     DoublyLinkedList tail;
     int size = 0;
 
+    public DoublyNode getNode(int index) {
+        DoublyNode<T> node = head;
+
+        for (int i = 0; i < size; i++) {
+            if (i == index) {
+                return node;
+            }
+            else node = node.getNext();
+        }
+        return null;
+    }
+
+    public T getData(int index) {
+        DoublyNode<T> node = head;
+
+        for (int i = 0; i < size; i++) {
+            if (i == index) {
+                return node.getData();
+            }
+            else node = node.getNext();
+        }
+        return null;
+    }
+
     public void add(T data) {
         DoublyNode<T> node = new DoublyNode<T>(data);
 
