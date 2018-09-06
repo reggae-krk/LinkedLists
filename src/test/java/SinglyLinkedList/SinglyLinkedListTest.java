@@ -9,19 +9,24 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class SinglyLinkedListTest {
 
+    private SinglyLinkedList<String> init() {
+        SinglyLinkedList<String> list = new SinglyLinkedList<String>();
+        list.add("test0");
+        list.add("test1");
+        list.add("test2");
+        return list;
+    }
+
     @Test
     void testAdd() {
-        SinglyLinkedList<String> list = new SinglyLinkedList<String>();
-        list.add("test");
+        SinglyLinkedList<String> list = init();
 
-        assertEquals("test", list.get(0));
+        assertEquals("test0", list.get(0));
     }
 
     @Test
     void testRemoveFirstElement() {
-        SinglyLinkedList<String> list = new SinglyLinkedList<String>();
-        list.add("test0");
-        list.add("test1");
+        SinglyLinkedList<String> list = init();
 
         list.remove(0);
 
@@ -30,10 +35,7 @@ class SinglyLinkedListTest {
 
     @Test
     void testRemoveMiddleElement() {
-        SinglyLinkedList<String> list = new SinglyLinkedList<String>();
-        list.add("test0");
-        list.add("test1");
-        list.add("test2");
+        SinglyLinkedList<String> list = init();
 
         list.remove(1);
 
@@ -43,10 +45,7 @@ class SinglyLinkedListTest {
 
     @Test
     void testRemoveLastElement() {
-        SinglyLinkedList<String> list = new SinglyLinkedList<String>();
-        list.add("test0");
-        list.add("test1");
-        list.add("test2");
+        SinglyLinkedList<String> list = init();
 
         list.remove(2);
 
@@ -56,9 +55,7 @@ class SinglyLinkedListTest {
 
     @Test
     void testInsert() {
-        SinglyLinkedList<String> list = new SinglyLinkedList<String>();
-        list.add("test0");
-        list.add("test1");
+        SinglyLinkedList<String> list = init();
 
         list.insert(1, "insert");
 
@@ -67,10 +64,7 @@ class SinglyLinkedListTest {
 
     @Test
     void testGetSize() {
-        SinglyLinkedList<String> list = new SinglyLinkedList<String>();
-        list.add("test0");
-        list.add("test1");
-        list.add("test2");
+        SinglyLinkedList<String> list = init();
 
         assertEquals(3, list.getSize());
 
@@ -78,10 +72,7 @@ class SinglyLinkedListTest {
 
     @Test
     void testGetTail() {
-        SinglyLinkedList<String> list = new SinglyLinkedList<String>();
-        list.add("test0");
-        list.add("test1");
-        list.add("test2");
+        SinglyLinkedList<String> list = init();
 
         SinglyLinkedList<String> result = list.getTail();
 
@@ -91,20 +82,14 @@ class SinglyLinkedListTest {
 
     @Test
     void testGetLast() {
-        SinglyLinkedList<String> list = new SinglyLinkedList<String>();
-        list.add("test0");
-        list.add("test1");
-        list.add("test2");
+        SinglyLinkedList<String> list = init();
 
         assertEquals("test2", list.getLast());
     }
 
     @Test
     void testIterate() {
-        SinglyLinkedList<String> list = new SinglyLinkedList<String>();
-        list.add("test0");
-        list.add("test1");
-        list.add("test2");
+        SinglyLinkedList<String> list = init();
 
         final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
