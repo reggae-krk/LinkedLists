@@ -80,4 +80,12 @@ public class DoublyLinkedList<T> {
         }
         return tail;
     }
+
+    public T getLast() {
+        DoublyNode<T> node = head;
+        for (int i = 0; i < size - 1; i++) {
+            node = node.getNext();
+        }
+        return node.getData();
+    }
 }
