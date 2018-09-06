@@ -14,4 +14,14 @@ class SinglyLinkedListTest {
         assertEquals("test", list.get(0));
     }
 
+    @Test
+    void testRemoveFirstElement() {
+        SinglyLinkedList<String> list = new SinglyLinkedList<String>();
+        list.add("test0");
+        list.add("test1");
+
+        list.remove(0);
+
+        assertEquals("test1", list.get(0));
+    }
 }
