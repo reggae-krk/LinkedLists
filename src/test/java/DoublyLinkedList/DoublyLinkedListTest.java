@@ -1,5 +1,7 @@
 package DoublyLinkedList;
 
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class DoublyLinkedListTest {
@@ -10,6 +12,13 @@ class DoublyLinkedListTest {
         list.add("test1");
         list.add("test2");
         return list;
+    }
+
+    @Test
+    void testAdd() {
+        DoublyLinkedList<String> list = init();
+
+        assertEquals("test0", list.getData(0));
     }
 
 }
