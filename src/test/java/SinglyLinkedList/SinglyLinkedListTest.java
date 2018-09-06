@@ -61,4 +61,15 @@ class SinglyLinkedListTest {
 
         assertEquals("insert", list.get(1));
     }
+
+    @Test
+    void testGetSize() {
+        SinglyLinkedList<String> list = new SinglyLinkedList<String>();
+        list.add("test0");
+        list.add("test1");
+        list.add("test2");
+
+        assertEquals(3, list.getSize());
+
+    }
 }
