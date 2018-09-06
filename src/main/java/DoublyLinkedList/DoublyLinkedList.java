@@ -41,4 +41,26 @@ public class DoublyLinkedList<T> {
         }
         size--;
     }
+
+    public void insert(int index, T data) {
+        DoublyNode<T> node = new DoublyNode<T>(data);
+        DoublyNode<T> tempNode = head;
+
+        if (index == 0) {
+            node.setNext(head);
+            head.setPrevious(node);
+            head = node;
+        }
+        else {
+            for (int i = 1; i < index; i++) {
+                tempNode = tempNode.getNext();
+            }
+            node.setNext(tempNode.getNext());
+            node.setPrevious(tempNode);
+
+            tempNode.setNext(node);
+            tempNode.getNext().getNext().setPrevious(node);
+        }
+        size++;
+    }
 }
