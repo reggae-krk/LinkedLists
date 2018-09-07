@@ -59,4 +59,12 @@ class DoublyLinkedListTest {
 
         assertEquals("insert", list.getData(1));
     }
+
+    @Test
+    void testGetSize() {
+        DoublyLinkedList<String> list = init();
+
+        assertEquals(3, list.getSize());
+
+    }
 }
