@@ -51,6 +51,7 @@ class SinglyLinkedListTest {
 
         assertEquals("test0", list.get(0));
         assertEquals("test1", list.get(1));
+        assertNull(list.get(2));
     }
 
     @Test
@@ -67,7 +68,6 @@ class SinglyLinkedListTest {
         SinglyLinkedList<String> list = init();
 
         assertEquals(3, list.getSize());
-
     }
 
     @Test
