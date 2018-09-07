@@ -54,6 +54,7 @@ public class DoublyLinkedList<T> {
 
         if (index == 0) {
             head = head.getNext();
+            head.setPrevious(null);
         }
         else if (index != size - 1) {
             for (int i = 1; i < index; i++) {

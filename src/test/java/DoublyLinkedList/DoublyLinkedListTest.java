@@ -55,6 +55,16 @@ class DoublyLinkedListTest {
     }
 
     @Test
+    void testRemoveFirstElementAndCheckPreviousAndNextAddres() {
+        DoublyLinkedList<String> list = init();
+
+        list.remove(0);
+
+        assertEquals("test2", list.getNode(0).getNext().getData());
+        assertNull(list.getNode(0).getPrevious());
+    }
+
+    @Test
     void testInsert() {
         DoublyLinkedList<String> list = init();
 
