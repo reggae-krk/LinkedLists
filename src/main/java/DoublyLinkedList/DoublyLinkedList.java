@@ -55,13 +55,20 @@ public class DoublyLinkedList<T> {
         if (index == 0) {
             head = head.getNext();
         }
-        else {
+        else if (index != size - 1) {
             for (int i = 1; i < index; i++) {
                 tempNode = tempNode.getNext();
             }
             DoublyNode<T> newNode = tempNode.getNext().getNext();
             tempNode.setNext(newNode);
             newNode.setPrevious(tempNode);
+        }
+        else {
+            while (tempNode.getNext() != null) {
+                tempNode = tempNode.getNext();
+            }
+            DoublyNode<T> newNode = tempNode.getPrevious();
+            newNode.setNext(null);
         }
         size--;
     }
