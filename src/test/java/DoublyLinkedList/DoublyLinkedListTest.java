@@ -2,6 +2,9 @@ package DoublyLinkedList;
 
 import org.junit.jupiter.api.Test;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class DoublyLinkedListTest {
@@ -82,5 +85,19 @@ class DoublyLinkedListTest {
         DoublyLinkedList<String> list = init();
 
         assertEquals("test2", list.getLast());
+    }
+
+    @Test
+    void testIterate() {
+        DoublyLinkedList<String> list = init();
+
+        final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+
+        list.iterate();
+
+        assertEquals("test0\n" +
+                "test1\n" +
+                "test2\n", outContent.toString());
     }
 }
