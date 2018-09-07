@@ -65,6 +65,15 @@ class DoublyLinkedListTest {
         DoublyLinkedList<String> list = init();
 
         assertEquals(3, list.getSize());
+    }
 
+    @Test
+    void testGetTail() {
+        DoublyLinkedList<String> list = init();
+
+        DoublyLinkedList<String> result = list.getTail();
+
+        assertEquals(2, result.getSize());
+        assertEquals("test1", result.getData(0));
     }
 }
