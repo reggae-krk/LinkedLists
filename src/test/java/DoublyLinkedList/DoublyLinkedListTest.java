@@ -55,7 +55,7 @@ class DoublyLinkedListTest {
     }
 
     @Test
-    void testRemoveFirstElementAndCheckPreviousAndNextAddres() {
+    void testRemoveFirstElementAndCheckPreviousAndNextAddress() {
         DoublyLinkedList<String> list = init();
 
         list.remove(0);
@@ -65,7 +65,7 @@ class DoublyLinkedListTest {
     }
 
     @Test
-    void testRemoveMiddleElementAndCheckPreviousAndNextAddres() {
+    void testRemoveMiddleElementAndCheckPreviousAndNextAddress() {
         DoublyLinkedList<String> list = init();
 
         list.remove(1);
